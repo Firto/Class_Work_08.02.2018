@@ -3,15 +3,22 @@
 #include <ctime>
 #include <string>
 using namespace std;
-// Написати рекурсивну функцію яка обчислює число фібаначі з номером N використовуючи дану функцію вивести перші 10 чисел фібаначі
-long long fibanachi(long long n) {
-	if (n > 1) 
-		return (fibanachi(n - 1) + fibanachi(n - 2));
-	else return 1;
+// Написати рекурсивну функцію яка обчислює суму массива
+long long sum_elsm(int mass[],int n) {
+	if (n > 0) 
+		return (mass[n-1]+sum_elsm(mass, n-1));
+	else return 0;
 }
 void main(){
+	int mass[10];
+	srand(time(0));
 	for (int i = 0; i < 10; i++)
-		cout << " " << fibanachi(i);
+	{
+		mass[i] = rand() % 10;
+		cout << " " << mass[i];
+	}
+	cout << endl;
+	cout << sum_elsm(mass, 10);
 	cout << endl;
 	system("pause");
 }
