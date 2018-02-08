@@ -3,12 +3,12 @@
 #include <ctime>
 #include <string>
 using namespace std;
-// Вивести цифри числа з ліва на право та з права на ліва використовуючи рекурсивну функцію
-void digits(long long n) {
-	if (n > 0) { digits(n / 10); cout << " " << n % 10;}
-	else cout << endl;
+// Написати рекурсивну функцію яка отримує ціле число і переводить його в двійкову систему
+void dviykova(long long n) {
+	if (n > 0) { dviykova(n / 2); cout << n % 2;}
 }
-void main() {
-	digits(1285);
+void main(){
+	dviykova(125);
+	cout << endl;
 	system("pause");
 }
