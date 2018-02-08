@@ -3,12 +3,12 @@
 #include <ctime>
 #include <string>
 using namespace std;
-// написати рекурсивну функцію для обчислення факторіала
-long long factorial(int n) {
-	if (n > 0) return n * factorial(n - 1);
-	else return 1;
+// Вивести цифри числа з ліва на право та з права на ліва використовуючи рекурсивну функцію
+void digits(long long n) {
+	if (n > 0) { digits(n / 10); cout << " " << n % 10;}
+	else cout << endl;
 }
 void main() {
-	cout << factorial(4) << endl;
+	digits(1285);
 	system("pause");
 }
